@@ -1,27 +1,32 @@
-# Store
+# E-Commerce Store Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+This project is a simple e-commerce application built using Angular for the front-end and leveraging the fakestoreapi.com as the backend API. The application allows users to view products, add them to their shopping cart, adjust quantities, and proceed to checkout. The application uses Stripe for handling payments.
 
-## Development server
+## Key Features:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1. **Product Listing:** The application fetches a list of products from fakestoreapi.com and displays them on the home page.
+2. **Add to Cart:** Users can add products to their shopping cart.
+3. **Shopping Cart:** Users can view their cart, adjust the quantity of each product in the cart, or remove items from the cart.
+4. **Checkout:** The application redirects users to the Stripe checkout page to complete the purchase.
 
-## Code scaffolding
+## Key Components:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Services:** The application has two main services:
+   - `CartService`: This service handles all cart-related operations like adding items to the cart, removing items from the cart, adjusting quantities, and calculating the total price of items in the cart.
+   - `StoreService`: This service handles all interactions with the backend API. It fetches products and categories from the API.
 
-## Build
+2. **Components:** The application has several components:
+   - `AppComponent`: The root component. It contains the header and a router-outlet where different pages are displayed.
+   - `HeaderComponent`: This component displays the navigation bar at the top of the page. It also displays the current state of the shopping cart and allows users to clear the cart.
+   - `HomeComponent`: This component displays a list of products on the home page.
+   - `CartComponent`: This component displays the shopping cart and allows users to adjust quantities or remove items.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. **Routing:** The application uses the Angular Router to navigate between the home page and the cart page.
 
-## Running unit tests
+## Technologies:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Angular
+- Angular Material for UI components
+- RxJS for managing state
+- fakestoreapi.com as backend API
+- Stripe for payment handling
